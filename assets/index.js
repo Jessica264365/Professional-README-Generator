@@ -1,10 +1,11 @@
+// Required modules and npm packages
 let inquirer = require("inquirer");
 let fs = require("fs");
 const licenseInfo = require("./license");
 const createREADME = require("./generateREADME");
 const getBadge = require("./licensebages");
 
-//WHEN I enter a description, installation instructions, usage information, contribution guidelines, and test instructions
+// Inquirer questions for the user about their README
 
 inquirer
   .prompt([
@@ -71,27 +72,35 @@ inquirer
         "unlicense",
         "apache-2.0",
         "gpl-3.0",
-        "lgpl-2.1",
         "gpl-2.0",
-        "epl-2.0",
+        "epl-1.0",
         "cc0-1.0",
         "bsd-3-clause",
         "bsd-2-clause",
+        "wtfpl",
+        "artistic-2.0",
+        "zlib",
       ],
     },
   ])
+  // The license information is passed to the licenseInfo module
   .then(function (data) {
     licenseInfo(data.license)
       .then((response) => {
+        // The license name and descriptoin are retrieved from the licenseInfo module
         let licenseDescript = response.data.description;
         let licenseName = response.data.name;
+        // The license badge is retrieved from the getBadge module
         let licenseBadge = getBadge(data.license);
+        // The inquirer data, licenseDescript, licenseName, and licenseBadge strings are
+        //all passed into the createREADME module and a string of the markdown for the README is returned.
         let readme = createREADME(
           data,
           licenseName,
           licenseDescript,
           licenseBadge
         );
+        // fs is used to create the README.md with the users information
         fs.writeFile("README.md", readme, function (err) {
           if (err) {
             return console.log(err);

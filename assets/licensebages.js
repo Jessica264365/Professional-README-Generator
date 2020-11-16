@@ -1,5 +1,3 @@
-const LicenseInfo = require("./license");
-
 // Function that retrieves the code to display the license badge at the top of the README
 let getBadge = (license) => {
   if (license === "mit") {
@@ -20,26 +18,33 @@ let getBadge = (license) => {
   if (license === "apache-2.0") {
     return "[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)";
   }
-  if (license === "gpl-3.0" ) {
-    return
-  } 
-  if (license === "lgpl-2.1") {
-    return
+  if (license === "gpl-3.0") {
+    return "[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)";
   }
   if (license === "gpl-2.0") {
-    return
+    return "[![License: GPL v2](https://img.shields.io/badge/License-GPL%20v2-blue.svg)](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)";
   }
-  if (license === "epl-2.0") {
-    return
+  if (license === "epl-1.0") {
+    return "[![License](https://img.shields.io/badge/License-EPL%201.0-red.svg)](https://opensource.org/licenses/EPL-1.0)";
   }
-
- 
-  
-
-  //     "gpl-2.0",
-  //     "epl-2.0",
-  //     "cc0-1.0",
-  //     "bsd-3-clause",
-  //     "bsd-2-clause",
+  if (license === "cc0-1.0") {
+    return "[![License: CC0-1.0](https://img.shields.io/badge/License-CC0%201.0-lightgrey.svg)](http://creativecommons.org/publicdomain/zero/1.0/)";
+  }
+  if (license === "bsd-3-clause") {
+    return "[![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)";
+  }
+  if (license === "bsd-2-clause") {
+    return "[![License](https://img.shields.io/badge/License-BSD%202--Clause-orange.svg)](https://opensource.org/licenses/BSD-2-Clause)";
+  }
+  if (license === "wtfpl") {
+    return "[![License: WTFPL](https://img.shields.io/badge/License-WTFPL-brightgreen.svg)](http://www.wtfpl.net/about/)";
+  }
+  if (license === "artistic-2.0") {
+    return "[![License: Artistic-2.0](https://img.shields.io/badge/License-Artistic%202.0-0298c3.svg)](https://opensource.org/licenses/Artistic-2.0)";
+  }
+  if (license === "zlib") {
+    return "[![License: Zlib](https://img.shields.io/badge/License-Zlib-lightgrey.svg)](https://opensource.org/licenses/Zlib)";
+  }
 };
+// getBadge is exported so it can be used in index.js
 module.exports = getBadge;

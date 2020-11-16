@@ -4,5 +4,5 @@ const axios = require("axios");
 const LicenseInfo = (license) => {
   return axios.get("https://api.github.com/licenses/" + license);
 };
-
+// LicenseInfo is exported so it can be used in index.js
 module.exports = LicenseInfo;

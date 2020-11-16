@@ -1,3 +1,4 @@
+// A string of markdown for the README
 const createREADME = (index, licenseName, licenseDescipt, licenseBadge) => {
   return `
 # ${index.title} 
@@ -65,10 +66,8 @@ ${index.contribution}
 Email: ${index.email}
 
 GitHub Page: ${index.GitHub}
-
-
-
-
 `;
 };
+
+// createREADME is exported for use in index.js
 module.exports = createREADME;
