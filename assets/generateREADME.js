@@ -1,9 +1,8 @@
-const index = require("./index");
-// const licenseInfo = require("./license");
-// [![License]${licenseIcon}
-const createREADME = `
+const createREADME = (index, licenseName, licenseDescipt, licenseBadge) => {
+  return `
 # ${index.title} 
 
+${licenseBadge}
 
 - View the GitHub [repository](https://github.com/Jessica264365/${index.repository})
 
@@ -50,7 +49,8 @@ ${index.testInstruct}
 
 ## License
 
-
+### ${licenseName}
+${licenseDescipt}
 
 ## Roadmap
 
@@ -70,5 +70,5 @@ GitHub Page: ${index.GitHub}
 
 
 `;
-
+};
 module.exports = createREADME;

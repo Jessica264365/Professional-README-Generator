@@ -1,5 +1,8 @@
 let inquirer = require("inquirer");
 let fs = require("fs");
+const licenseInfo = require("./license");
+const createREADME = require("./generateREADME");
+const getBadge = require("./licensebages");
 
 //WHEN I enter a description, installation instructions, usage information, contribution guidelines, and test instructions
 
@@ -13,7 +16,8 @@ inquirer
     {
       type: "input",
       name: "repository",
-      message: "What is the name of your GitHub repository?",
+      message:
+        "What is the name of your GitHub repository? Please use a '-' to seperate multiple words.",
     },
     {
       type: "input",
@@ -77,29 +81,25 @@ inquirer
     },
   ])
   .then(function (data) {
-    const {
-      title,
-      repository,
-      description,
-      installation,
-      usage,
-      contribution,
-      testInstruct,
-      GitHub,
-      email,
-      license,
-    } = data;
-    console.log(title);
-
-    const licenseInfo = require("./license");
-    licenseInfo(license);
-
-    const createREADME = require("./generateREADME");
-
-    fs.writeFile("README.md", createREADME, function (err) {
-      if (err) {
-        return console.log(err);
-      }
-      console.log("It Worked!");
-    });
+    licenseInfo(data.license)
+      .then((response) => {
+        let licenseDescript = response.data.description;
+        let licenseName = response.data.name;
+        let licenseBadge = getBadge(data.license);
+        let readme = createREADME(
+          data,
+          licenseName,
+          licenseDescript,
+          licenseBadge
+        );
+        fs.writeFile("README.md", readme, function (err) {
+          if (err) {
+            return console.log(err);
+          }
+          console.log("It Worked!");
+        });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   });
