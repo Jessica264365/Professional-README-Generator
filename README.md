@@ -24,7 +24,7 @@
 
 This is a command line professional README Generator. When it is running in the terminal the user is asked a series of questions about their project such as the title, a description, contribution guidelines, and usage information. At the end, the user is prompted to select a license for their project. Using GitHub’s API for license information the title and a brief description of the license is provided in the appropriate section of the README. A license badge is also displayed at the top of the README. Once all the information is entered, the terminal should display “It worked!” so the user knows the README has been generated correctly. At that point, the user has a complete professional README for their project within a fraction of the time it would take to create their own from scratch.
 
-![](./images/readme1.PNG) ![](./images/readme2.PNG)
+![](./assets/images/readme1.PNG) ![](./assets/images/readme2.PNG)
 
 ### Usage
 
