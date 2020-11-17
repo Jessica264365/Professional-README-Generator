@@ -23,8 +23,7 @@ ${licenseBadge}
 - [My Contact Information](https://github.com/Jessica264365/${index.repository}#my-contact-information)
 
 ## About the Project
-
-${index.desciption}
+${index.description}
 
 ### Usage
 
@@ -65,7 +64,7 @@ ${index.contribution}
 
 Email: ${index.email}
 
-GitHub Page: ${index.GitHub}
+GitHub Page: [${index.GitHub}](https://github.com/${index.GitHub})
 `;
 };
 
