@@ -1,6 +1,6 @@
 # Professional README Generator
 
-[![License: WTFPL](https://img.shields.io/badge/License-WTFPL-brightgreen.svg)](http://www.wtfpl.net/about/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 - View the GitHub [repository](https://github.com/Jessica264365/Professional-README-Generator)
 - View the [video demonstration](https://drive.google.com/file/d/1if7WTmco69nJCu9IYH9EwHRsvTMqtDqu/view)
@@ -50,9 +50,9 @@ There are currently no test for this application.
 
 ## License
 
-### Do What The F\*ck You Want To Public License
+### MIT License
 
-The easiest license out there. It gives the user permissions to do whatever they want with your code.
+A short and simple permissive license with conditions only requiring preservation of copyright and license notices. Licensed works, modifications, and larger works may be distributed under different terms and without source code.
 
 ## Roadmap
 
